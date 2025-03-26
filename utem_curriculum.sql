@@ -36,34 +36,6 @@ CREATE TABLE `asignaturas` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `asignaturas`
---
-
-INSERT INTO `asignaturas` (`id`, `nombre`, `carrera_id`, `semestre`, `duracion_semanas`, `created_at`) VALUES
-(3, 'Cálculo 1', 3, 4, 16, '2024-12-26 18:14:15'),
-(8, 'Evaluación y Planificación del Fitness', 4, 1, 16, '2025-01-01 22:13:59'),
-(9, 'Entrenamiento Funcional del Movimiento', 4, 1, 16, '2025-01-01 22:14:43'),
-(10, 'Evaluación y Entrenamiento Motriz', 4, 1, 16, '2025-01-01 22:15:08'),
-(11, 'Acondicionamiento Físico Formativo', 4, 1, 16, '2025-01-01 22:15:23'),
-(12, 'Entrenamiento en Fitness', 4, 2, 16, '2025-01-01 22:15:37'),
-(13, 'Selección y Adaptación de Ejercicios', 4, 2, 16, '2025-01-01 22:16:01'),
-(14, 'Planificación Deporte Formativo', 4, 2, 16, '2025-01-01 22:17:10'),
-(15, 'Entrenamiento Metabólico', 4, 2, 16, '2025-01-01 22:17:30'),
-(16, 'Evaluación Poblaciones Especiales', 4, 3, 16, '2025-01-01 22:18:01'),
-(17, 'Actividad Física para Personas con Discapacidad', 4, 3, 16, '2025-01-01 22:18:28'),
-(18, 'Evaluación del Rendimiento Físico', 4, 3, 16, '2025-01-01 22:19:22'),
-(19, 'Entrenamiento de Resistencia', 4, 3, 16, '2025-01-01 22:19:41'),
-(20, 'Servicios Freelance', 4, 3, 16, '2025-01-01 22:19:56'),
-(21, 'Primeros Auxilios', 4, 3, 16, '2025-01-01 22:20:06'),
-(22, 'Programación de Actividad Física', 4, 4, 16, '2025-01-01 22:20:30'),
-(23, 'Acondicionamiento Físico para Poblaciones Especiales', 4, 4, 16, '2025-01-01 22:20:56'),
-(24, 'Orientaciones Nutricionales', 4, 4, 16, '2025-01-01 22:21:09'),
-(25, 'Periodización Deportiva', 4, 4, 16, '2025-01-01 22:21:27'),
-(26, 'Entrenamiento de Fuerza y Velocidad', 4, 4, 16, '2025-01-01 22:21:46'),
-(27, 'Gestión de Planificación', 4, 4, 16, '2025-01-01 22:22:02'),
-(28, 'Portafolio de Título', 4, 5, 16, '2025-01-01 22:22:16'),
-(29, 'Práctica Profesional', 4, 5, 16, '2025-01-01 22:22:37');
 
 -- --------------------------------------------------------
 
@@ -79,14 +51,6 @@ CREATE TABLE `atributos` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `atributos`
---
-
-INSERT INTO `atributos` (`id`, `tipo`, `descripcion`, `carrera_id`, `created_at`) VALUES
-(2, 'Dominio', 'Uso del 2+2', 3, '2025-01-25 02:26:54'),
-(3, 'Competencia', 'No copiar', 3, '2025-01-25 02:27:04'),
-(4, 'Resultado Aprendizaje', 'Lograr calcular la masa del sol', 3, '2025-01-25 02:28:28');
 
 -- --------------------------------------------------------
 
@@ -102,14 +66,6 @@ CREATE TABLE `carreras` (
   `anio` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `carreras`
---
-
-INSERT INTO `carreras` (`id`, `nombre`, `jornada`, `duracion_semestres`, `anio`, `created_at`) VALUES
-(3, 'Química y Farmacia', 'Diurna', 12, 2024, '2024-12-26 18:13:24'),
-(4, 'Preparador Físico', 'Diurna', 5, 2025, '2024-12-29 17:43:01');
 
 -- --------------------------------------------------------
 
@@ -148,14 +104,6 @@ CREATE TABLE `matrices_coherencia` (
   `sct_chile` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `matrices_coherencia`
---
-
-INSERT INTO `matrices_coherencia` (`id`, `asignatura_id`, `dominio`, `competencia`, `resultado_aprendizaje`, `actividad_curricular`, `criterios_logro`, `contenidos`, `bibliografia`, `metodologias`, `evaluacion`, `evidencias`, `sct_chile`, `created_at`) VALUES
-(1, 3, 'Uso de matemáticas', 'Ingenio', 'Que aprendan', 'Calcular XD', 'Sumar 2+2 = 4', 'Aritmética', '--', '--', '--', 'Lapiz y papel', 58, '2024-12-29 18:07:24'),
-(2, 3, 'Uso del 2+2', 'No copiar', 'Lograr calcular la masa del sol', 'N/A', 'XD', 'XD', '', 'XD', 'XD?', '', 0, '2025-01-25 02:37:51');
 
 -- --------------------------------------------------------
 
