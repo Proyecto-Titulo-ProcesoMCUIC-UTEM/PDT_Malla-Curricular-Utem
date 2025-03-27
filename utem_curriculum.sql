@@ -39,6 +39,18 @@ CREATE TABLE `asignaturas` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `atributos`
+--
+
+CREATE TABLE `atributos` (
+  `id` int(11) NOT NULL,
+  `tipo` enum('Dominio','Competencia','Resultado Aprendizaje') NOT NULL,
+  `descripcion` text NOT NULL,
+  `carrera_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
 -- Estructura de tabla para la tabla `carreras`
 --
 
