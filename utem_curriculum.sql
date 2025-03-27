@@ -39,18 +39,6 @@ CREATE TABLE `asignaturas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `atributos`
---
-
-CREATE TABLE `atributos` (
-  `id` int(11) NOT NULL,
-  `tipo` enum('Dominio','Competencia','Resultado Aprendizaje') NOT NULL,
-  `descripcion` text NOT NULL,
-  `carrera_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Estructura de tabla para la tabla `carreras`
 --
 
@@ -120,13 +108,6 @@ ALTER TABLE `asignaturas`
   ADD KEY `carrera_id` (`carrera_id`);
 
 --
--- Indices de la tabla `atributos`
---
-ALTER TABLE `atributos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `carrera_id` (`carrera_id`);
-
---
 -- Indices de la tabla `carreras`
 --
 ALTER TABLE `carreras`
@@ -157,12 +138,6 @@ ALTER TABLE `asignaturas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
--- AUTO_INCREMENT de la tabla `atributos`
---
-ALTER TABLE `atributos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
 -- AUTO_INCREMENT de la tabla `carreras`
 --
 ALTER TABLE `carreras`
@@ -189,13 +164,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `asignaturas`
   ADD CONSTRAINT `asignaturas_ibfk_1` FOREIGN KEY (`carrera_id`) REFERENCES `carreras` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `atributos`
---
-ALTER TABLE `atributos`
-  ADD CONSTRAINT `atributos_ibfk_1` FOREIGN KEY (`carrera_id`) REFERENCES `asignaturas` (`id`) ON DELETE CASCADE;
-
 
 --
 -- Filtros para la tabla `matrices_coherencia`
